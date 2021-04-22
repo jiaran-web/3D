@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D相册</title>
+    <link rel="icon" href="./bitbug_favicon%20.ico ">
+    <style>
+        html{
+            perspective: 800px;
+        }
+        /*设置旋转关键帧*/
+        @keyframes zhuan {
+            from{
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to{
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+
+        }
+        /*最外层盒子*/
+        .box{
+            width: 400px;
+            height: 400px;
+            margin: 300px auto;
+            /*background-color: #bfa;*/
+            /*line-height: 400px;*/
+            /*text-align: center;*/
+            /*font-size: 50px;*/
+            /*font-weight: bold;*/
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 1s;
+            animation: zhuan 20s infinite linear;
+        }
+        /*外层立方体*/
+        .box1,.box2,.box3,.box4,.box5,.box6{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            line-height: 400px;
+            text-align: center;
+            font-size: 100px;
+            font-weight: bold;
+            transform-style: preserve-3d;
+            opacity: .9;
+            transition: all 2s;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /*内层立方体*/
+        .inBox1,.inBox2,.inBox3,.inBox4,.inBox5,.inBox6{
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            line-height: 200px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            transform-style: preserve-3d;
+            /*background-color: red;*/
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            /*opacity: .5;*/
+            /*transition: all 2s;*/
+        }
+        /*鼠标移入打开效果*/
+        .box:hover .box1{
+            transform: rotateY(90deg) translateZ(400px);
+        }
+        .box:hover .box2{
+            transform:  translateZ(-400px);
+        }
+        .box:hover .box3{
+            transform: rotateY(90deg) translateZ(-400px);
+        }
+        .box:hover .box4{
+            transform:  translateZ(400px);
+        }
+        .box:hover .box5{
+            transform: rotateX(90deg) translateZ(400px);
+        }
+        .box:hover .box6{
+            transform: rotateX(90deg) translateZ(-400px);
+        }
+        /*外层立方体六个面*/
+        .box1{
+            background-image: url("./img/5.png");
+            /*background-position: center center;*/
+            /*background-size: cover;*/
+            /*background-repeat: no-repeat;*/
+            /*background-color: red;*/
+            transform: rotateY(90deg) translateZ(200px);
+        }
+        .box2{
+            background-image: url("./img/6.png");
+            /*background-color: yellowgreen;*/
+            transform:  translateZ(-200px);
+        }
+        .box3{
+            background-image: url("./img/3.png");
+            /*background-color: skyblue;*/
+            transform: rotateY(90deg) translateZ(-200px);
+        }
+        .box4{
+            background-image: url("./img/9.png");
+            /*background-color: yellow;*/
+            transform:  translateZ(200px);
+        }
+        .box5{
+            background-image: url("./img/2.png");
+            /*background-color: orange;*/
+            transform: rotateX(90deg) translateZ(200px);
+        }
+        .box6{
+            background-image: url("./img/1.png");
+            /*background-color: mediumvioletred;*/
+            transform: rotateX(90deg) translateZ(-200px);
+        }
+        /*内层立方体六个面*/
+        .inBox1{
+            background-image: url("./img/4.png");
+            /*background-color: red;*/
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .inBox2{
+            background-image: url("./img/7.png");
+            /*background-color: yellowgreen;*/
+            transform:  translateZ(-100px);
+        }
+        .inBox3{
+            background-image: url("./img/8.png");
+            /*background-color: skyblue;*/
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+        .inBox4{
+            background-image: url("./img/10.png");
+            /*background-color: yellow;*/
+            transform:  translateZ(100px);
+        }
+        .inBox5{
+            background-image: url("./img/11.png");
+            /*background-color: orange;*/
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .inBox6{
+            background-image: url("./img/12.png");
+            /*background-color: mediumvioletred;*/
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="box2">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="box3">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="box4">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="box5">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="box6">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="inBox1">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="inBox2">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="inBox3">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="inBox4">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="inBox5">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+        <div class="inBox6">
+<!--            <img src="./img/1.jpg" alt="">-->
+        </div>
+    </div>
+</body>
+</html>
